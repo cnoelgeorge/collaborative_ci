@@ -10,14 +10,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class controller {
 
-    @RequestMapping("/")
-   public @ResponseBody String greeting() {
-     return "End Point";
-   }
+
 
     @GetMapping("/home")
-    public String homePage(@RequestParam(name="name", required=false, defaultValue="Testing") String name, Model model) {
-        model.addAttribute("name", name);
-        return "greeting";
+    public String homePage(@RequestParam(name="location", required=false, defaultValue="Trivandrum") String location, Model model) {
+        model.addAttribute("location", location);
+        return "home";
     }
 }

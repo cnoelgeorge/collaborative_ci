@@ -26,9 +26,23 @@ targetCompatibility = 1.8
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+    compile("org.springframework.boot:spring-boot-devtools")
+    compile("org.apache.commons:commons-lang3:3.7")
+    testCompile("junit:junit")
     testCompile("org.springframework.boot:spring-boot-starter-test")
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.+'
 }
 
 task wrapper(type: Wrapper) {
     gradleVersion = '4.6'
+}
+
+test{
+    exclude '**/collab/acceptance/**'
+}
+
+
+task acceptance(  type : Test){
+    include '**/collab/acceptance/**'
 }
