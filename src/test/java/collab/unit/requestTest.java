@@ -27,4 +27,10 @@ public class requestTest {
         assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/",
                 String.class)).contains("Please continue");
     }
+
+    @Test
+    public void homeShouldReturnDefaultMessage() throws Exception {
+        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/home",
+                String.class)).contains("This demo is for - Trivandrum");
+    }
 }
