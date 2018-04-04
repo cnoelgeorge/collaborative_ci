@@ -21,7 +21,7 @@ public class acceptanceTest extends baseTest {
     @Test
     public void homePage(){
         browser.navigate().to(urlApp+"/home");
-        Assert.assertEquals("Welcome text validation-", "This demo is for - Bangalore", browser.findElement(By.className("comment1")).getText());
+        Assert.assertEquals("Welcome text validation-", "This demo is for - Trivandrum", browser.findElement(By.className("comment1")).getText());
 
     }
 
