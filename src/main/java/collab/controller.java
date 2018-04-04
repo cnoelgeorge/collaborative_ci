@@ -13,7 +13,7 @@ public class controller {
 
 
     @GetMapping("/home")
-    public String homePage(@RequestParam(name="location", required=false, defaultValue="Trivandrum") String location, Model model) {
+    public String homePage(@RequestParam(name="location", required=false, defaultValue="Chennai") String location, Model model) {
         model.addAttribute("location", location);
         return "home";
     }
